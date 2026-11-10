@@ -23,11 +23,14 @@ jobs:
       with:
         gradle-version: '8.5'
 
+    - name: Generate Gradle Wrapper
+      run: gradle wrapper --gradle-version 8.5
+
     - name: Create local.properties
       run: echo "sdk.dir=$ANDROID_HOME" > local.properties
 
     - name: Build Debug APK
-      run: gradle assembleDebug --stacktrace --console=plain
+      run: ./gradlew assembleDebug --info
 
     - name: Upload APK Artifact
       uses: actions/upload-artifact@v4
