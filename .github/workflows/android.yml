@@ -18,11 +18,11 @@ jobs:
         distribution: 'temurin'
         java-version: '17'
 
+    - name: Generate Gradle Wrapper
+      run: gradle wrapper
+
     - name: Build Debug APK
-      run: |
-        export ANDROID_HOME=$HOME/android-sdk
-        yes | sdkmanager --licenses || true
-        ./gradlew assembleDebug || gradle assembleDebug || ./gradlew build
+      run: ./gradlew assembleDebug
 
     - name: Upload APK Artifact
       uses: actions/upload-artifact@v4
