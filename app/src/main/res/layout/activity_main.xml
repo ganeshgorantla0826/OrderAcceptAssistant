@@ -1,139 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000000"
+    android:orientation="vertical"
     android:padding="16dp">
 
-    <LinearLayout
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:text="Order Accept Assistant"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:paddingBottom="24dp"/>
 
-        <!-- Title -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Order Accept Assistant"
-            android:textColor="#FFFFFF"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:paddingBottom="16dp"/>
+    <Button
+        android:id="@+id/btnLoginWhatsApp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FFFFFF"
+        android:text="Login with WhatsApp"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"/>
 
-        <!-- WhatsApp Login Section -->
-        <Button
-            android:id="@+id/btnWhatsAppLogin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Login with WhatsApp"
-            android:backgroundTint="#FFFFFF"
-            android:textColor="#000000"
-            android:textStyle="bold"
-            android:layout_marginBottom="16dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Subscription Status: Free Plan"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:paddingBottom="12dp"/>
 
-        <!-- Subscription Card -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="#1A1A1A"
-            android:padding="12dp"
-            android:layout_marginBottom="16dp">
+    <Button
+        android:id="@+id/btnSubscribe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#333333"
+        android:text="Upgrade Subscription (Daily/Weekly/Monthly)"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="24dp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Subscription Status: Active (Trial)"
-                android:textColor="#FFFFFF"
-                android:textStyle="bold"
-                android:textSize="14sp"
-                android:layout_marginBottom="8dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Filter Settings"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:paddingBottom="8dp"/>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+    <EditText
+        android:id="@+id/etMaxDistance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#222222"
+        android:hint="Max Distance (km)"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#888888"
+        android:padding="12dp"
+        android:layout_marginBottom="12dp"/>
 
-                <Button
-                    android:id="@+id/btnDaily"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Daily"
-                    android:backgroundTint="#333333"
-                    android:textColor="#FFFFFF"
-                    android:textSize="12sp"/>
+    <EditText
+        android:id="@+id/etMinFare"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#222222"
+        android:hint="Min Fare ($)"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#888888"
+        android:padding="12dp"
+        android:layout_marginBottom="24dp"/>
 
-                <Button
-                    android:id="@+id/btnWeekly"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Weekly"
-                    android:backgroundTint="#333333"
-                    android:textColor="#FFFFFF"
-                    android:textSize="12sp"
-                    android:layout_marginStart="4dp"
-                    android:layout_marginEnd="4dp"/>
+    <Button
+        android:id="@+id/btnStartService"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FFFFFF"
+        android:text="Start Auto Assistant"
+        android:textColor="#000000"
+        android:textStyle="bold"/>
 
-                <Button
-                    android:id="@+id/btnMonthly"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Monthly"
-                    android:backgroundTint="#333333"
-                    android:textColor="#FFFFFF"
-                    android:textSize="12sp"/>
-            </LinearLayout>
-        </LinearLayout>
-
-        <!-- Filters Section -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Order Filters"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:layout_marginBottom="8dp"/>
-
-        <EditText
-            android:id="@+id/etMinDistance"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Min Pickup/Drop Distance (km)"
-            android:textColorHint="#888888"
-            android:textColor="#FFFFFF"
-            android:background="#1A1A1A"
-            android:padding="12dp"
-            android:inputType="numberDecimal"
-            android:layout_marginBottom="12dp"/>
-
-        <EditText
-            android:id="@+id/etMinFare"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Minimum Fare ($)"
-            android:textColorHint="#888888"
-            android:textColor="#FFFFFF"
-            android:background="#1A1A1A"
-            android:padding="12dp"
-            android:inputType="numberDecimal"
-            android:layout_marginBottom="24dp"/>
-
-        <!-- Master Switch / Service Control -->
-        <Button
-            android:id="@+id/btnToggleService"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:text="Start Auto Accept Service"
-            android:backgroundTint="#FFFFFF"
-            android:textColor="#000000"
-            android:textStyle="bold"
-            android:textSize="16sp"/>
-
-    </LinearLayout>
-</ScrollView>
-      
+</LinearLayout>
+        
